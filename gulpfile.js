@@ -11,7 +11,7 @@ import rename from "gulp-rename";
 import rtlcss from "rtlcss";
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-import stylelint from "stylelint";
+import stylelint from "gulp-stylelint";
 
 const sass = gulpSass(dartSass);
 

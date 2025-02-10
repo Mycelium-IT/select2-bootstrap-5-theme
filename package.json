@@ -54,7 +54,7 @@
     "@ronilaukkarinen/gulp-stylelint": "^14.0.5",
     "autoprefixer": "^10.4.2",
     "cssnano": "^7.0.6",
-    "del": "^6.0.0",
+    "del": "^8.0.0",
     "gulp": "^4.0.2",
     "gulp-if": "^3.0.0",
     "gulp-plumber": "^1.2.1",

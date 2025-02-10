@@ -1,10 +1,10 @@
-@import "variables";
+@use "variables";
 
-@import "layout";
-@import "dropdown";
-@import "single";
-@import "multiple";
-@import "disabled";
-@import "input-group";
-@import "validation";
-@import "sizing";
+@use "layout";
+@use "dropdown";
+@use "single";
+@use "multiple";
+@use "disabled";
+@use "input-group";
+@use "validation";
+@use "sizing";

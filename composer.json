@@ -1,7 +1,7 @@
 {
-  "name": "apalfrey/select2-bootstrap-5-theme",
+  "name": "mycelium/select2-bootstrap-5-theme",
   "description": "Select2 theme for Bootstrap 5",
-  "homepage": "https://github.com/apalfrey/select2-bootstrap-5-theme",
+  "homepage": "https://github.com/mycelium/select2-bootstrap-5-theme",
   "keywords": [
     "select2",
     "theme",
@@ -17,7 +17,11 @@
     {
       "name": "Andrew Palfrey",
       "email": "apalfrey@apalfrey.me"
+    },
+    {
+      "name": "MIT",
+      "email": "dev@mycelium-it.com"
     }
   ],
-  "version": "1.4.0"
+  "version": "1.4.1"
 }

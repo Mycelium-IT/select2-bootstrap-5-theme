@@ -1,16 +1,16 @@
 // Core dependencies
-const gulp = require( "gulp" )
+import gulp from "gulp";
 
 // External dependencies
-const autoprefixer = require( "autoprefixer" )
-const cssnano = require( "cssnano" )
-const del = require( "del" )
-const gulpif = require( "gulp-if" )
-const postcss = require( "gulp-postcss" )
-const rename = require( "gulp-rename" )
-const rtlcss = require( "rtlcss" )
-const sass = require( "gulp-sass" )( require( "sass" ) )
-const stylelint = require( "@ronilaukkarinen/gulp-stylelint" )
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
+import { deleteAsync as del } from "del";
+import gulpif from "gulp-if";
+import postcss from "gulp-postcss";
+import rename from "gulp-rename";
+import rtlcss from "rtlcss";
+import sass from "gulp-sass";
+import stylelint from "@ronilaukkarinen/gulp-stylelint";
 
 const config = {
     stylelint: {

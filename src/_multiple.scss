@@ -1,3 +1,5 @@
+@use "variables";
+
 .select2-container--bootstrap-5 {
     .select2-selection--multiple {
         // List items
@@ -14,29 +16,29 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                padding: $s2bs5-multi-item-padding-y $s2bs5-multi-item-padding-x;
+                padding: variables.$s2bs5-multi-item-padding-y variables.$s2bs5-multi-item-padding-x;
                 margin-right: .375rem;
                 margin-bottom: .375rem;
-                @include font-size($s2bs5-font-size);
-                color: $s2bs5-color;
+                @include font-size(variables.$s2bs5-font-size);
+                color: variables.$s2bs5-color;
                 cursor: auto;
-                border: $s2bs5-border-width solid $s2bs5-border-color;
-                @include border-radius($s2bs5-border-radius);
+                border: variables.$s2bs5-border-width solid variables.$s2bs5-border-color;
+                @include border-radius(variables.$s2bs5-border-radius);
 
                 // Removal button
                 .select2-selection__choice__remove {
-                    width: $s2bs5-clear-width;
-                    height: $s2bs5-clear-height;
-                    padding: $s2bs5-clear-padding-y $s2bs5-clear-padding-x;
+                    width: variables.$s2bs5-clear-width;
+                    height: variables.$s2bs5-clear-height;
+                    padding: variables.$s2bs5-clear-padding-y variables.$s2bs5-clear-padding-x;
                     margin-right: .25rem;
                     overflow: hidden;
                     text-indent: 100%;
                     white-space: nowrap;
-                    background: $s2bs5-clear-bg;
+                    background: variables.$s2bs5-clear-bg;
                     border: 0;
 
                     &:hover {
-                        background: $s2bs5-clear-hover-bg;
+                        background: variables.$s2bs5-clear-hover-bg;
                     }
 
                     // Remove children
@@ -51,23 +53,23 @@
         .select2-search {
             display: block;
             width: 100%;
-            height: $s2bs5-height-inner;
+            height: variables.$s2bs5-height-inner;
 
             // Input field
             .select2-search__field {
                 width: 100%;
-                height: $s2bs5-height-inner;
+                height: variables.$s2bs5-height-inner;
                 margin-top: 0;
                 margin-left: 0;
-                font-family: $s2bs5-font-family;
-                line-height: $s2bs5-line-height;
+                font-family: variables.$s2bs5-font-family;
+                line-height: variables.$s2bs5-line-height;
                 background-color: transparent;
             }
         }
 
         // Clear button override
         .select2-selection__clear {
-            right: $s2bs5-padding-x;
+            right: variables.$s2bs5-padding-x;
         }
     }
 }

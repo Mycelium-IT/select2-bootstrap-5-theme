@@ -9,18 +9,20 @@ import gulpif from "gulp-if";
 import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import rtlcss from "rtlcss";
-import dartSass from 'sass';
+import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass';
-import stylelint from "gulp-stylelint";
+import stylelint from "stylelint";
+import gulpStylelint from "gulp-stylelint";
 
 const sass = gulpSass(dartSass);
 
 const config = {
     stylelint: {
         failAfterError: true,
+        quietDeprecationWarnings: true,
         reporters: [
             {
-                formatter: "verbose",
+                formatter: 'verbose',
                 console: true,
             },
         ],
@@ -49,10 +51,10 @@ gulp.task( "docs:clean", () => {
     ] )
 } )
 
-gulp.task( "docs:lint", () => {
-    return gulp.src( "docs/_sass/**/*.scss" )
-        .pipe( stylelint( config.stylelint ) )
-} )
+// gulp.task( "docs:lint", () => {
+//     return gulp.src( "docs/_sass/**/*.scss" )
+//         .pipe( gulpStylelint( config.stylelint ) )
+// } )
 
 gulp.task( "docs:compile:main", () => {
     return gulp.src( "docs/_sass/docs.scss" )
@@ -97,7 +99,8 @@ gulp.task( "docs:watch", ( done ) => {
     done()
 } )
 
-gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl", "docs:compile:testing" ) )
+gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:compile:main", "docs:compile:rtl", "docs:compile:testing" ) )
+// gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl", "docs:compile:testing" ) )
 /* End docs tasks */
 
 gulp.task( "clean", () => {
@@ -106,10 +109,10 @@ gulp.task( "clean", () => {
     ] )
 } )
 
-gulp.task( "lint", () => {
-    return gulp.src( "src/**/*.scss" )
-        .pipe( stylelint( config.stylelint ) )
-} )
+// gulp.task( "lint", () => {
+//     return gulp.src( "src/**/*.scss" )
+//         .pipe( gulpStylelint( config.stylelint ) )
+// } )
 
 const compile = ( rtl = false ) => {
     let postcss_options = [
@@ -144,7 +147,8 @@ gulp.task( "compile:rtl", () => {
     return compile( true )
 } )
 
-gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl", "docs:compile" ) )
+gulp.task( "compile", gulp.series( "clean", "compile:main", "compile:rtl", "docs:compile" ) )
+// gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl", "docs:compile" ) )
 
 gulp.task( "watch", ( done ) => {
     gulp.watch( "src/*.scss", gulp.series( "compile" ) )

@@ -1,3 +1,5 @@
+@use "variables";
+
 // Base layout
 .select2-container--bootstrap-5 {
     display: block;
@@ -13,18 +15,18 @@
     // Input
     .select2-selection {
         width: 100%;
-        min-height: $s2bs5-height;
-        padding: $s2bs5-padding-y $s2bs5-padding-x;
-        font-family: $s2bs5-font-family;
-        @include font-size($s2bs5-font-size);
-        font-weight: $s2bs5-font-weight;
-        line-height: $s2bs5-line-height;
-        color: $s2bs5-color;
-        background-color: $s2bs5-bg;
-        border: $s2bs5-border-width solid $s2bs5-border-color;
-        @include border-radius($s2bs5-border-radius, 0);
-        @include box-shadow($s2bs5-box-shadow);
-        @include transition($s2bs5-transition);
+        min-height: variables.$s2bs5-height;
+        padding: variables.$s2bs5-padding-y variables.$s2bs5-padding-x;
+        font-family: variables.$s2bs5-font-family;
+        @include font-size(variables.$s2bs5-font-size);
+        font-weight: variables.$s2bs5-font-weight;
+        line-height: variables.$s2bs5-line-height;
+        color: variables.$s2bs5-color;
+        background-color: variables.$s2bs5-bg;
+        border: variables.$s2bs5-border-width solid variables.$s2bs5-border-color;
+        @include border-radius(variables.$s2bs5-border-radius, 0);
+        @include box-shadow(variables.$s2bs5-box-shadow);
+        @include transition(variables.$s2bs5-transition);
         appearance: none;
     }
 
@@ -32,8 +34,8 @@
     &.select2-container--focus,
     &.select2-container--open {
         .select2-selection {
-            border-color: $s2bs5-focus-border-color;
-            box-shadow: $s2bs5-focus-box-shadow;
+            border-color: variables.$s2bs5-focus-border-color;
+            box-shadow: variables.$s2bs5-focus-box-shadow;
         }
     }
 
@@ -66,19 +68,19 @@
         .select2-selection__clear {
             position: absolute;
             top: 50%;
-            right: $s2bs5-indicator-padding;
-            width: $s2bs5-clear-width;
-            height: $s2bs5-clear-height;
-            padding: $s2bs5-clear-padding-y $s2bs5-clear-padding-x;
+            right: variables.$s2bs5-indicator-padding;
+            width: variables.$s2bs5-clear-width;
+            height: variables.$s2bs5-clear-height;
+            padding: variables.$s2bs5-clear-padding-y variables.$s2bs5-clear-padding-x;
             overflow: hidden;
             text-indent: 100%;
             white-space: nowrap;
-            background: $s2bs5-clear-bg;
+            background: variables.$s2bs5-clear-bg;
             transform: translateY(-50%);
 
             // Change icon on hover
             &:hover {
-                background: $s2bs5-clear-hover-bg;
+                background: variables.$s2bs5-clear-hover-bg;
             }
 
             // Hide children

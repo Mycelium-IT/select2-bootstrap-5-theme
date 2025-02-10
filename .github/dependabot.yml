@@ -1,0 +1,53 @@
+version: 2
+updates:
+
+  # Maintain dependencies for composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "develop"
+    reviewers:
+      - "cedric-r-mycelium"
+    assignees:
+      - "cedric-r-mycelium"
+  #  labels:
+   #   - "En attente de lecture"
+    commit-message:
+      prefix: "IT-Composer"
+    open-pull-requests-limit: 50
+    allow:
+      # Allow both direct and indirect updates for all packages
+      - dependency-type: "all"
+    ignore:
+      - dependency-name: "symfony/*"
+        update-types: ["version-update:semver-major"]
+    groups:
+      aws:
+        patterns:
+          - "aws/*"
+      symfony:
+        patterns:
+          - "symfony/*"
+      twig:
+        patterns:
+          - "twig/*"          
+      mycelium:
+        patterns:
+          - "mycelium/*"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "develop"
+    reviewers:
+      - "cedric-r-mycelium"
+    assignees:
+      - "cedric-r-mycelium"
+    #labels:
+     # - "En attente de lecture"
+    commit-message:
+      prefix: "IT-Npm"
+    open-pull-requests-limit: 50

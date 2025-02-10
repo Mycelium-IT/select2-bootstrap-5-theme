@@ -9,8 +9,11 @@ import gulpif from "gulp-if";
 import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import rtlcss from "rtlcss";
-import sass from "gulp-sass";
-import stylelint from "@ronilaukkarinen/gulp-stylelint";
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import stylelint from "stylelint";
+
+const sass = gulpSass(dartSass);
 
 const config = {
     stylelint: {

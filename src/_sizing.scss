@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "variables";
 
-@mixin s2bs5-sizing($size-list: variables.$s2bs5-small, $selector: "") {
+@mixin s2bs5-sizing($size-list: $s2bs5-small, $selector: "") {
     // Layout
     #{$selector}.select2-selection {
         min-height: map.get($size-list, height);
@@ -74,14 +74,14 @@
 
     // Single
     #{$selector}.select2-selection--single {
-        padding: map.get($size-list, padding-y) variables.$s2bs5-indicator-padding map.get($size-list, padding-y) map.get($size-list, padding-x);
+        padding: map.get($size-list, padding-y) $s2bs5-indicator-padding map.get($size-list, padding-y) map.get($size-list, padding-x);
     }
 
     // Multiple
     #{$selector}.select2-selection--multiple {
         .select2-selection__rendered {
             .select2-selection__choice {
-                padding: variables.$s2bs5-multi-item-padding-y variables.$s2bs5-multi-item-padding-x;
+                padding: $s2bs5-multi-item-padding-y $s2bs5-multi-item-padding-x;
                 @include font-size(map.get($size-list, font-size));
 
                 .select2-selection__choice__remove {
@@ -106,23 +106,23 @@
 // Using options
 .select2-container--bootstrap-5 {
     // Small
-    @include s2bs5-sizing(variables.$s2bs5-small, ".select2--small");
+    @include s2bs5-sizing($s2bs5-small, ".select2--small");
 
     // Large
-    @include s2bs5-sizing(variables.$s2bs5-large, ".select2--large");
+    @include s2bs5-sizing($s2bs5-large, ".select2--large");
 }
 
 // Using bootstrap classes
 // Small
 .form-select-sm {
     ~ .select2-container--bootstrap-5 {
-        @include s2bs5-sizing(variables.$s2bs5-small);
+        @include s2bs5-sizing($s2bs5-small);
     }
 }
 
 // Large
 .form-select-lg {
     ~ .select2-container--bootstrap-5 {
-        @include s2bs5-sizing(variables.$s2bs5-large);
+        @include s2bs5-sizing($s2bs5-large);
     }
 }

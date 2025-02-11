@@ -1,6 +1,3 @@
-@use "sass:map";
-@use "variables";
-
 @mixin s2bs5-sizing($size-list: $s2bs5-small, $selector: "") {
     // Layout
     #{$selector}.select2-selection {

@@ -1,0 +1,13 @@
+name: 🏷️ PR Labeler
+
+on:
+  pull_request:
+    # MIT2026-2646 : le label derive du nom de branche, inchange par un push.
+    types: [opened, reopened]
+
+jobs:
+  pr-labeler:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: Mycelium-IT/devops-workflows/.github/workflows/pr-labeler.yml@master
